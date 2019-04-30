@@ -1,17 +1,17 @@
 let bubbles = [];
 
-let flower;
+let smoke;
 let kittens = [];
 
 function preload() {
-  flower = loadImage('kittens/flower.png');
+  flower = loadImage('kittens/smoke.png');
   for (let i = 0; i < 5; i++) {
     kittens[i] = loadImage(`kittens/kitten${i}.png`);
   }
 
   function preload() {
     soundFormats('mp3', 'ogg');
-    mySound = loadSound('Dawn_beak_2019_04_29_07_23_47/bomb.mp3');
+    mySound = loadSound('bomb.mp3');
   }
 }
 
@@ -21,7 +21,7 @@ function setup() {
     let x = random(width);
     let y = random(height);
     let r = random(100, 200);
-    // let kitten = random(kittens);
+
     let b = new Bubble(x, y, r);
     bubbles.push(b);
   }

@@ -1,18 +1,14 @@
-let bubbles = [];
+let haha = [];
 
 let smoke;
-let kittens = [];
+let b = [];
 
 function preload() {
-  flower = loadImage('kittens/smoke.png');
+  smoke = loadImage('b/smoke.png');
   for (let i = 0; i < 5; i++) {
-    kittens[i] = loadImage(`kittens/kitten${i}.png`);
+    b[i] = loadImage(`b/stress${i}.png`);
   }
-
-  function preload() {
-    soundFormats('mp3', 'ogg');
-    mySound = loadSound('bomb.mp3');
-  }
+  bomb = loadSound("bomb.mp3");
 }
 
 function setup() {
@@ -22,40 +18,40 @@ function setup() {
     let y = random(height);
     let r = random(100, 200);
 
-    let b = new Bubble(x, y, r);
-    bubbles.push(b);
+    let b = new Haha(x, y, r);
+    haha.push(b);
   }
 }
 
 function mousePressed() {
-  for (let i = 0; i < bubbles.length; i++) {
-    bubbles[i].clicked(mouseX, mouseY);
+  bomb.play();
+  for (let i = 0; i < haha.length; i++) {
+    haha[i].clicked(mouseX, mouseY);
   }
 }
 
 
 function draw() {
   background(200, 200, 0);
-  for (let i = 0; i < bubbles.length; i++) {
-    bubbles[i].move();
-    bubbles[i].show();
+  for (let i = 0; i < haha.length; i++) {
+    haha[i].move();
+    haha[i].show();
   }
 }
 
-class Bubble {
+class Haha {
   constructor(x, y, r, img) {
     this.x = x;
     this.y = y;
     this.r = r;
-    this.kitten = random(kittens);
+    this.stress = random(b);
 
   }
 
   clicked(px, py) {
-    //let d = dist(px, py, this.x, this.y);
-    //if (d < this.r) {
+
     if (px > this.x && px < this.x + this.r && py > this.y && py < this.y + this.r) {
-      this.kitten = flower; //random(kittens);
+      this.stress = smoke;
     }
   }
 
@@ -65,10 +61,7 @@ class Bubble {
   }
 
   show() {
-    image(this.kitten, this.x, this.y, this.r, this.r);
-    // stroke(255);
-    // strokeWeight(4);
-    // fill(this.brightness, 125);
-    // ellipse(this.x, this.y, this.r * 2);
+    image(this.stress, this.x, this.y, this.r, this.r);
+
   }
 }

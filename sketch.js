@@ -32,7 +32,7 @@ function mousePressed() {
 
 
 function draw() {
-  background(200, 200, 0);
+  background(29,7,7);
   for (let i = 0; i < haha.length; i++) {
     haha[i].move();
     haha[i].show();
